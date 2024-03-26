@@ -1,0 +1,6 @@
+
+
+# database.properties
+db.url=jdbc:mysql://localhost:3306/webnhom
+db.user=root
+db.driver=com.mysql.cj.jdbc.Driver

@@ -1,0 +1,55 @@
+
+
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+<display-name>Archetype Created Web Application</display-name>
+<servlet>
+  <servlet-name>loginServlet</servlet-name>
+  <servlet-class>controller.loginServlet</servlet-class>
+</servlet>
+<!--  Mapping Servlet  -->
+<servlet-mapping>
+  <servlet-name>loginServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+</servlet-mapping>
+<!--     ánh xạ trang thông tin cá nhân JSP cho trang Servelet xử lý  (tức là khi mà ấn
+    vào link đến trang thôn tin cá nhân cần lấy thông tin để hiển thị
+     -->
+<servlet>
+  <servlet-name>thongtincanhan</servlet-name>
+  <servlet-class>controller.thongtincanhan_Servlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>thongtincanhan</servlet-name>
+  <url-pattern>/thongtincanhan</url-pattern>
+</servlet-mapping>
+<!--     checkcode -->
+<servlet>
+  <servlet-name>checkcode</servlet-name>
+  <servlet-class>controller.CheckCodeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>checkcode</servlet-name>
+  <url-pattern>/checkcode</url-pattern>
+</servlet-mapping>
+<!--     tạo code -->
+<filter>
+  <filter-name>thongtincanhan_Filter</filter-name>
+  <filter-class>controller.thongtincanhan_Filter</filter-class>
+  <!--  Bạn có thể thêm các tham số cấu hình tại đây nếu cần  -->
+</filter>
+<filter-mapping>
+  <filter-name>thongtincanhan_Filter</filter-name>
+  <url-pattern>/thongtincanhan</url-pattern>
+  <!--  Bạn có thể sử dụng servlet-name thay vì url-pattern nếu cần  -->
+  <!--  <servlet-name>MyServlet</servlet-name>  -->
+</filter-mapping>
+<servlet>
+  <servlet-name>createcode</servlet-name>
+  <servlet-class>controller.serveltCreateCode</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>createcode</servlet-name>
+  <url-pattern>/createcode</url-pattern>
+</servlet-mapping>
+</web-app>
